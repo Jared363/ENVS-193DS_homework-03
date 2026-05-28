@@ -18,6 +18,8 @@ library(here)
 library(janitor)
 library(readxl)
 library(ggplot2)
+library(ggeffects)
+library(flextable)
 
 ```
 
@@ -43,12 +45,24 @@ b. Create a visualization\newline
 
 ```{r}
 
+# ggplot as first layer 
 ggplot(
+  # data is kelp
+  # temp is x-axis
+  # kelp_elongation is y-axis
   data = kelp,
   mapping = aes(x = temp_c,
                 y = kelp_elong
                 )
-)
+) + 
+  geom_point(
+    color = 'springgreen4'
+  ) +
+  labs(
+    x = "Temperatures (Celcius)",
+    y = "Kelp Elongation Rate (cm/day)"
+  ) +
+  theme_minimal()
 
 
 
