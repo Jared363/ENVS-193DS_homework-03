@@ -1,6 +1,7 @@
 ---
 title: "ES193 Homework 3 Code"
 author: "Jared Umphress"
+subtitle: "May 28, 2026"
 format: pdf
 ---
 
@@ -11,20 +12,48 @@ Load in libraries
 #| message: false
 #| warning: false
 
+# loading in libraries for this homework
 library(tidyverse)
 library(here)
 library(janitor)
 library(readxl)
+library(ggplot2)
 
 ```
 
 
 ```{r}
 # store temp-kelp.csv as an object called kelp
-
 kelp <- read_csv(here("data", "temp-kelp.csv"))
 
 # store my personal data 
+my_data <- read_csv(here("data/screen_time.csv"))
+
+```
+
+
+# Part 2. Problems
+## Problem 1. Giant kelp fronds
+a. An appropriate test\newline
+Linear model and correlation
+
+A linear model is one test that can be used to determine the strength of the relationship with its outputted Coefficient of Determination, which describes how much of the variance in giant kelp frond elongation rate can be explained by temperature. A correlation test informs you the strength between temperature and kelp elongation rate, and whether the relationship is positive or negative.
+
+b. Create a visualization\newline
+
+```{r}
+
+ggplot(
+  data = kelp,
+  mapping = aes(x = temp_c,
+                y = kelp_elong
+                )
+)
+
+
+
+
+
 
 ```
 
