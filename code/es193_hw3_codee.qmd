@@ -37,15 +37,14 @@ my_data <- read_csv(here("data/screen_time.csv"))
 # Part 2. Problems
 ## Problem 1. Giant kelp fronds
 a. An appropriate test\newline
-Linear model and correlation
+The two appropriate tests to determine the strength of the relationship between temperature and giant kelp frond elongation rate are Pearson's correlation and Spearman rank correlation; both of which assume that observations are independent. A Pearson's correlation test is performed for a parametric sample where it is assumed that the variables are continuous, normally distributed, and that there is a linear relationship between them. A Spearman rank correlation test is performed for a non-parametric sample where it is assumed that there is a monotonic relationship between the variables. 
 
-A linear model is one test that can be used to determine the strength of the relationship with its outputted Coefficient of Determination, which describes how much of the variance in giant kelp frond elongation rate can be explained by temperature. A correlation test informs you the strength between temperature and kelp elongation rate, and whether the relationship is positive or negative.
 
 b. Create a visualization\newline
 
 ```{r}
 
-# ggplot as first layer 
+# ggplot as base layer 
 ggplot(
   # data is kelp
   # temp is x-axis
@@ -55,19 +54,75 @@ ggplot(
                 y = kelp_elong
                 )
 ) + 
+  # geom_point as first layer
   geom_point(
-    color = 'springgreen4'
+    # changing color of points
+    color = 'springgreen4' 
   ) +
+  # relabelling x and y axis
   labs(
     x = "Temperatures (Celcius)",
     y = "Kelp Elongation Rate (cm/day)"
   ) +
+  # changing the theme from the default
+  theme_minimal()
+
+```
+
+c. Check your assumptions and run your test\newline
+### Checking assumptions
+```{r}
+
+# ggplot as base layer
+ggplot(
+  # using kelp data
+  data = kelp,
+  # plotting temperature 
+  mapping = aes(sample = temp_c)
+) +
+  # qq line is first layer
+  geom_qq_line() +
+  # qq points are second layer
+  # changing color of the points
+  geom_qq(color = 'tomato4') +
+  # setting theme as minimal
   theme_minimal()
 
 
 
-
+# ggplot as base layer 
+ggplot(
+  # using kelp data
+  data = kelp,
+  # plotting kelp elongation rate
+  mapping = aes(sample = kelp_elong)
+) +
+  # qq line is first layer
+  geom_qq_line() +
+  # qq points are second layer
+  # changing color of points
+  geom_qq(color = 'skyblue3') +
+  # setting theme as minimal
+  theme_minimal()
 
 
 ```
+
+I checked the assumption that there is a linear relationship between the two variables by looking at the scatterplot of temperature and kelp elongation rate and determined that there is a linear relationship between them. I checked the assumption that the two variables are normally distributed by looking at a qq plot for each of the variables. Since the points are generally around the qq line and are randomly scattered above and below, I determined that there is a normal distribution for both variables. 
+
+
+### Running Pearson's Correlation Test
+```{r}
+
+# running a correlation test
+cor.test(
+         # testing correlation between kelp elongation rate and temperature 
+         kelp$kelp_elong, kelp$temp_c,
+         # method tells you what type of pearson's correlatoin
+         method = "pearson")
+
+```
+
+d. Results communication\newline
+
 
