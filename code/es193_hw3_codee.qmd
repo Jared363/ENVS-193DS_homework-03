@@ -5,6 +5,11 @@ subtitle: "May 28, 2026"
 format: pdf
 ---
 
+Questions for Prof Bui:
+- Is it okay to run t-tests and linear models for my figures?
+- Is it okay to have more than two figures for my data?
+- How do I cite my own data?
+
 # Part 1. Set up tasks
 
 Load in libraries 
@@ -185,7 +190,7 @@ ggplot(data = my_data_clean,
   # boxplot is second layer
   geom_boxplot() +
   # jitter plot is the third layer
-  geom_jitter() +
+  geom_jitter(shape = 21) +
   # renaming y axis, x axis, and title
   labs(y = "Computer Screen Time (minutes)",
        x = "",
@@ -193,14 +198,14 @@ ggplot(data = my_data_clean,
        subtitle = "05-27-2026") +
   # manually setting color for Weekdays and Weekends gropus
   scale_color_manual(values = c("Weekdays" = "dodgerblue3",
-                                "Weekends" = 'yellow3')) +
+                                "Weekends" = 'orange2')) +
   # changing the theme from the default
   theme_classic() +
   # removing legend 
   theme(legend.position = "none")
 
 ```
-
+**Figure 1. Weekdays Have Greater Computer Screen Time on Average**. Hollow blue points represent Weekday daily computer screen times from April 20, 2026 to May 27, 2026. Hollow orange points Weekend daily computer screen times from April 20, 2026 to May 27, 2026. The bottom line of the box represents the 25th percentile, the middle line represents the median, and the top line represents the 75th percentile. The lines extended out from the boxplot extend to the furthest point within 1.5 times the value of the IQR. The filled in point in the Weekdays group represents an outlier further than 1.5 times the IQR above the 75th percentile. Data originally from: Jared Umphress. 2026. Computer Screen Time Data. Data accessed 2026-05-28.
 
 ```{r}
 
@@ -253,4 +258,10 @@ ggplot(data = my_data_clean,
   )
 
 ```
+**Figure 3. Computer Screen Time in Relation to Non-Computer Activity Time.** The filled in purple points represent a given days Non-Computer Activity Time and Computer Screen Time. Data originally from: Jared Umphress. 2026. Computer Screen Time Data. Data accessed 2026-05-28.
+
+b. Captions\newline
+Captions included above. 
+
+
 
