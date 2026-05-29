@@ -9,6 +9,7 @@ Questions for Prof Bui:
 - Is it okay to run t-tests and linear models for my figures?
 - Is it okay to have more than two figures for my data?
 - How do I cite my own data?
+- is it okay to have axis lines for my personal data figures?
 
 # Part 1. Set up tasks
 
@@ -75,6 +76,7 @@ ggplot(
 ```
 
 c. Check your assumptions and run your test\newline
+
 ### Checking assumptions
 ```{r}
 
@@ -229,39 +231,30 @@ ggplot(data = my_data_clean,
   # removing legend
   theme(legend.position = "none")
 
-```
 
-
-```{r}
-
-# ggplot is base layer
-ggplot(data = my_data_clean,
-       # x axis is time spent on non computer activities
-       # y axis is computer screen time
-       # the color of the plot will be orchid4
-       mapping = aes(x = time_activities,
-                     y = computer_time
-                     )) +
-  # points are second layer
-  geom_point(color = "orchid4") +
-  # renaming x axis, y axis, and title
-  labs(x = "Non-Computer Activity Time (minutes)",
-       y = "Computer Screen Time (minutes",
-       title = "Activity Time effect on Computer Screen Time is Unclear",
-       subtitle = "05-27-2026") +
-  # removing legend
-  theme(legend.position = "none",
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
-        panel.background = element_blank(),
-        plot.background = element_blank()
-  )
+ #theme(legend.position = "none",
+ #       panel.grid.major = element_blank(),
+ #        panel.grid.minor = element_blank(),
+ #        panel.background = element_blank(),
+ #        plot.background = element_blank()
 
 ```
 **Figure 3. Computer Screen Time in Relation to Non-Computer Activity Time.** The filled in purple points represent a given days Non-Computer Activity Time and Computer Screen Time. Data originally from: Jared Umphress. 2026. Computer Screen Time Data. Data accessed 2026-05-28.
 
 b. Captions\newline
 Captions included above. 
+
+## Problem 3. Affective visualization
+
+a. Describe in words what an affective visualization could look like for your personal data.\newline
+
+Since I am comparing computer screen time between weekdays vs weekends, I want to create a dichotomous visual. The weekdays and weekend group will each have images that combine to form sort of a boxplot. I would like to frame more computer screen time as bad and less screen time as good. Since weekdays had higher average computer screen times I want to use negative meme photos. Since weekends had lower average computer screen times I want to use positive meme photos. 
+
+b. Create a sketch (on paper) of your idea\newline
+![Affective Visual Sketch](affective_visual_sketch.JPG){width=100% fig-align="center"}
+
+c. Make a draft of your visualization\newline
+
 
 
 
