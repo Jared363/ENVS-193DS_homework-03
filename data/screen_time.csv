@@ -36,4 +36,5 @@ date,weekday,day,time_class,time_activities,number_activities,time_exercise,comp
 05-24-26,n,sun,0,420,2,360,217,264,0,,"hike, dinner"
 05-25-26,y,mon,0,180,2,30,141,304,0,three day weekend,"run, standup"
 05-26-26,y,tue,75,240,2,0,170,98,0,,"meeting, farm"
-05-27-27,y,wen,100,,1,,,,0,late to wrt107,mead&meander
+05-27-26,y,wen,100,0,0,0,235,224,0,late to wrt107,
+05-28-26,y,thu ,75,120,1,0,,,0,,"farm, farm meeting doesn't count"

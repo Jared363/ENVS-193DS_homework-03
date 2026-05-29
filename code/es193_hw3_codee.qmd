@@ -126,5 +126,131 @@ cor.test(
 d. Results communication\newline
 To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson's correlation test. We found a moderate negative relationship between temperature and kelp frond elongation rate (Pearson's correlation, r = -0.6877489, t(30) = -5.189, p = 1.366e-05, $\alpha$ = 0.05).
 
+e. Test implications\newline
+I found that as temperature increases, the kelp elongation rate decreases. This is based on my Pearson's correlation test, where I found a moderate negative relationship between temperatures and kelp frond elongation rate (Pearson's correlation, r = -0.6877489, t(30) = -5.189, p = 1.366e-05, $\alpha$ = 0.05). Based on these results we can infer that kelp growth rates will be lowered during warmer weather and can be permanently decreased due to climate change. 
 
+f. Double check your own work\newline
+
+```{r}
+#| warning: false
+
+# running spearmans correlation test 
+cor.test(
+  # testing correlation between temperature and kelp elongation rate
+  kelp$temp_c, kelp$kelp_elong,
+  # doing a spearman's correlation
+  method = "spearman"
+)
+
+```
+
+Both the Pearson's correlation test and Spearman's correlation test would have led me to make the same decision. The Spearman's correlation test also found a moderate negative relationship between temperature and kelp frond elongation rates (Spearman's correlation, $\rho$ =  -0.6891684, S = 9216.1, p = 1.29e-05, $\alpha$ = 0.05)
+
+## Problem 2. Personal data
+
+a. Updating your visualizations\newline
+
+Cleaning my_data
+```{r}
+
+# cleaning my_data and storing it as object my_data_clean
+my_data_clean <- my_data |>
+  # dropping rows that contain NA values in the computer_time column
+  drop_na(computer_time) |>
+  # changing weekday variable inputs
+  mutate(weekday = case_when(
+    # y inputs in the weekday column are now displayed as Weekdays
+    # n inputs in the weekday column are not displayed as Weekends
+    weekday == "y" ~ "Weekdays",
+    weekday == "n" ~ "Weekends"
+  ))
+
+my_data_clean <- my_data_clean |>
+  mutate(total_screen_time = computer_time + phone_time)
+
+```
+
+
+```{r}
+
+# base layer is ggplot
+# data is my_data_clean
+ggplot(data = my_data_clean,
+       # x axis is whether it is a weekday or weekend
+       # y axis is the computer screen time
+       # color is based on whether it is the weekday or weekend group
+       mapping = aes(x = weekday,
+                     y = computer_time,
+                     color = weekday)) +
+  # boxplot is second layer
+  geom_boxplot() +
+  # jitter plot is the third layer
+  geom_jitter() +
+  # renaming y axis, x axis, and title
+  labs(y = "Computer Screen Time (minutes)",
+       x = "",
+       title = "Weekdays Have Greater Computer Screen Time on Average",
+       subtitle = "05-27-2026") +
+  # manually setting color for Weekdays and Weekends gropus
+  scale_color_manual(values = c("Weekdays" = "dodgerblue3",
+                                "Weekends" = 'yellow3')) +
+  # changing the theme from the default
+  theme_classic() +
+  # removing legend 
+  theme(legend.position = "none")
+
+```
+
+
+```{r}
+
+# ggplot is base layer
+ggplot(data = my_data_clean,
+       # x axis is time spent on non computer activities
+       # y axis is computer screen time
+       # the color of the plot will be orchid4
+       mapping = aes(x = time_activities,
+                     y = computer_time
+                     )) +
+  # points are second layer
+  geom_point(color = "orchid4") +
+  # renaming x axis, y axis, and title
+  labs(x = "Non-Computer Activity Time (minutes)",
+       y = "Computer Screen Time (minutes",
+       title = "Activity Time effect on Computer Screen Time is Unclear",
+       subtitle = "05-27-2026") +
+  # changing theme from the default
+  theme_classic() +
+  # removing legend
+  theme(legend.position = "none")
+
+```
+
+
+```{r}
+
+# ggplot is base layer
+ggplot(data = my_data_clean,
+       # x axis is time spent on non computer activities
+       # y axis is computer screen time
+       # the color of the plot will be orchid4
+       mapping = aes(x = time_activities,
+                     y = computer_time
+                     )) +
+  # points are second layer
+  geom_point(color = "orchid4") +
+  # renaming x axis, y axis, and title
+  labs(x = "Non-Computer Activity Time (minutes)",
+       y = "Computer Screen Time (minutes",
+       title = "Activity Time effect on Computer Screen Time is Unclear",
+       subtitle = "05-27-2026") +
+  # removing legend
+  theme(legend.position = "none",
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        plot.background = element_blank()
+  )
+
+```
 
