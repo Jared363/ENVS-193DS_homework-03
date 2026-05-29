@@ -254,7 +254,7 @@ b. Create a sketch (on paper) of your idea\newline
 ![Affective Visual Sketch](affective_visual_sketch.JPG){width=100% fig-align="center"}
 
 c. Make a draft of your visualization\newline
-
+![Affective Visual Canva Draft 1](canva_affective_visual_draft1.jpg){width=100% fig-align="center"}
 
 
 
