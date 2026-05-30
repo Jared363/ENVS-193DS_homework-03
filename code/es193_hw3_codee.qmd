@@ -2,14 +2,17 @@
 title: "ES193 Homework 3 Code"
 author: "Jared Umphress"
 subtitle: "May 28, 2026"
-format: pdf
+format: 
+  pdf:
+    colorlinks: true
 ---
 
 Questions for Prof Bui:
-- Is it okay to run t-tests and linear models for my figures?
-- Is it okay to have more than two figures for my data?
-- How do I cite my own data?
-- is it okay to have axis lines for my personal data figures?
+- Is it okay to run t-tests and linear models for my figures? its ok
+- Is it okay to have more than two figures for my data? 
+- How do I cite my own data? don't need to. Maybe last updated
+- is it okay to have axis lines for my personal data figures? axis lines diff from grid lines, okay to keep axis lines
+- anything to reduce file size of photos reduces rendered 
 
 # Part 1. Set up tasks
 
@@ -256,5 +259,30 @@ b. Create a sketch (on paper) of your idea\newline
 c. Make a draft of your visualization\newline
 ![Affective Visual Canva Draft 1](canva_affective_visual_draft1.jpg){width=100% fig-align="center"}
 
+d. Write an artist statement\newline
+I am showing the differences in computer screen time between weekdays and weekends. The inspiration for the watercolor background was Jill Pelto's paintings. The inspiratoin for the imagery were popular memes and feeling provoking images that I have found online or have captured of my own life. I developed my piece on canva and added imagery that felt either negative or positive, letting my creativity roam freely throughout the process. 
+e. Prep your materials to share in class\newline
 
+[Affective Visual Presentation](https://docs.google.com/presentation/d/1Y7-z5dcnbAaKNBAqVxenq7AqtHwft9xEEiFj2JxDOcY/edit?usp=sharing)
+
+## Problem 4. Statistical critique
+
+a. Revisit and summarize\newline
+
+----------
+I have selected one of the Wilcoxon's test.
+
+The response variables are soil salinity and water content. The predictor variable is one of the two Phase sites. 
+
+
+The Wilcoxon test addresses the authors main question about the difference of soil abiotic factors between the two Phase sites. 
+
+A significant result would indicate that there is a difference in soil conditions between the two phase sites and thus they can use the two sites to compare how soil salinity and soil moisture affect plant establishment success.\newline
+-------
+
+What are the statistical tests the authors are using to address their main research question?
+
+The authors used a Wilcoxon test to determine whether there is a difference in soil salinity and water content between two phase sites. A significant result would indicate that there is a difference in soil conditions between the two phase sites and thus they can use the two sites to compare how soil salinity and soil moisture affect plant establishment success. Comparing the two sites helps address the authors main question of how successful plant establishment is after the soil topography has been moved based on different abiotic factors. 
+
+![Salinity Graph](salinity_graph.png)
 
