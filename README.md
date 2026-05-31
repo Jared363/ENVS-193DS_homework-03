@@ -19,4 +19,4 @@ There is an ENVS-193DS_homework-03.qmd which completes all the components of hom
 
 ## Rendered output
 
-The rendered .pdf for my homework 3 is [here](https://github.com/Jared363/ENVS-193DS_homework-03blob/main/code/es193_codee.pdf)
+The rendered .pdf for my homework 3 is [here](https://github.com/Jared363/ENVS-193DS_homework-03/blob/main/code/es193_codee.pdf)
