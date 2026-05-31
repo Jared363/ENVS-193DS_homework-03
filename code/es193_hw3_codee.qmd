@@ -5,6 +5,10 @@ subtitle: "May 30, 2026"
 format: 
   pdf:
     colorlinks: true
+
+execute:
+  warning: false
+  message: false
 ---
 
 Questions for Prof Bui:
@@ -234,7 +238,7 @@ ggplot(data = my_data_clean,
   theme(legend.position = "none")
 
 ```
-**Figure 3. Computer Screen Time in Relation to Non-Computer Activity Time.** The filled in purple points represent a given days Non-Computer Activity Time and Computer Screen Time. Data last updated 2026-05-28.
+**Figure 2. Computer Screen Time in Relation to Non-Computer Activity Time.** The filled in purple points represent a given days Non-Computer Activity Time and Computer Screen Time. Data last updated 2026-05-28.
 
 b. Captions\newline
 Captions included above. 
@@ -270,11 +274,11 @@ The x-axis is time and the y-axis is salinity for one of the figure and moisture
 
 c. Aesthetic clarity\newline
 
-Overall, the authors handle "visual clutter" pretty good as they have taken efforts to increase their data to ink ratio such as removing the figure background and gridlines. The authors do not include the underlying data through a jitterplot over the boxplot which I think was a good choice since there are ten boxplots which would have meant a lot of points crowding each smaller boxplot. However, I would say that the white x letters on each boxplot, which might represent the median value of the boxplot increase the visual clutter
+Overall, the authors handle "visual clutter" pretty good as they have taken efforts to increase their data to ink ratio such as removing the figure background and gridlines. The authors do not include the underlying data through a jitterplot over the boxplot which I think was a good choice since there are ten boxplots which would have meant a lot of points crowding each smaller boxplot. 
 
 d. Recommendations\newline
 
-One thing that I would remove is the x letters on the boxplot as the median is already denoted by the bolded black line in the boxplot. Even if the white x represents the connecting point for the line graph between dates it is not necessary and increases the visual clutter. The second thing I could change is making the text slighly bigger to increase reading accesibility. As it is, it is hard to read some of the numbers until you open the "figure viewer" on the webpage, and even when you do the font size is a little too small and could be increased. 
+One thing I could change is making the text slighly bigger to increase reading accesibility. As it is, it is hard to read some of the numbers until you open the "figure viewer" on the webpage, and even when you do the font size is a little too small and could be increased. 
 
 
 
