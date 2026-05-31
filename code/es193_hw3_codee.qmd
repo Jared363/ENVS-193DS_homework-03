@@ -11,12 +11,6 @@ execute:
   message: false
 ---
 
-Questions for Prof Bui:
-- Is it okay to run t-tests and linear models for my figures? its ok
-- Is it okay to have more than two figures for my data? 
-- How do I cite my own data? don't need to. Maybe last updated
-- is it okay to have axis lines for my personal data figures? axis lines diff from grid lines, okay to keep axis lines
-- anything to reduce file size of photos reduces rendered 
 
 # Part 1. Set up tasks
 
