@@ -1,7 +1,7 @@
 ---
 title: "ES193 Homework 3 Code"
 author: "Jared Umphress"
-subtitle: "May 28, 2026"
+subtitle: "May 30, 2026"
 format: 
   pdf:
     colorlinks: true
@@ -50,7 +50,6 @@ The two appropriate tests to determine the strength of the relationship between 
 
 
 b. Create a visualization\newline
-
 ```{r}
 
 # ggplot as base layer 
@@ -117,7 +116,6 @@ ggplot(
 
 
 ```
-
 I checked the assumption that there is a linear relationship between the two variables by looking at the scatterplot of temperature and kelp elongation rate and determined that there is a linear relationship between them. I checked the assumption that the two variables are normally distributed by looking at a qq plot for each of the variables. Since the points are generally around the qq line and are randomly scattered above and below, I determined that there is a normal distribution for both variables. 
 
 
@@ -134,10 +132,10 @@ cor.test(
 ```
 
 d. Results communication\newline
-To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson's correlation test. We found a moderate negative relationship between temperature and kelp frond elongation rate (Pearson's correlation, r = -0.6877489, t(30) = -5.189, p = 1.366e-05, $\alpha$ = 0.05).
+To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson's correlation test. We found a moderate negative relationship between temperature and kelp frond elongation rate (Pearson's correlation, r = -0.6877489, t(30) = -5.189, p < 0.0001, $\alpha$ = 0.05).
 
 e. Test implications\newline
-I found that as temperature increases, the kelp elongation rate decreases. This is based on my Pearson's correlation test, where I found a moderate negative relationship between temperatures and kelp frond elongation rate (Pearson's correlation, r = -0.6877489, t(30) = -5.189, p = 1.366e-05, $\alpha$ = 0.05). Based on these results we can infer that kelp growth rates will be lowered during warmer weather and can be permanently decreased due to climate change. 
+I found that as temperature increases, the kelp elongation rate decreases. This is based on my Pearson's correlation test, where I found a moderate negative relationship between temperatures and kelp frond elongation rate (Pearson's correlation, r = -0.6877489, t(30) = -5.189, p < 0.0001, $\alpha$ = 0.05). Based on these results we can infer that kelp growth rates will be lowered during warmer weather which may occur more frequently due to climate change. 
 
 f. Double check your own work\newline
 
@@ -154,7 +152,7 @@ cor.test(
 
 ```
 
-Both the Pearson's correlation test and Spearman's correlation test would have led me to make the same decision. The Spearman's correlation test also found a moderate negative relationship between temperature and kelp frond elongation rates (Spearman's correlation, $\rho$ =  -0.6891684, S = 9216.1, p = 1.29e-05, $\alpha$ = 0.05)
+Both the Pearson's correlation test and Spearman's correlation test would have led me to make the same decision. The Spearman's correlation test also found a moderate negative relationship between temperature and kelp frond elongation rates (Spearman's correlation, $\rho$ =  -0.6891684, S = 9216.1, p < 0.0001, $\alpha$ = 0.05)
 
 ## Problem 2. Personal data
 
@@ -175,9 +173,6 @@ my_data_clean <- my_data |>
     weekday == "n" ~ "Weekends"
   ))
 
-my_data_clean <- my_data_clean |>
-  mutate(total_screen_time = computer_time + phone_time)
-
 ```
 
 
@@ -195,7 +190,10 @@ ggplot(data = my_data_clean,
   # boxplot is second layer
   geom_boxplot() +
   # jitter plot is the third layer
-  geom_jitter(shape = 21) +
+  geom_jitter(
+    shape = 21,
+    width = 0.3
+    ) +
   # renaming y axis, x axis, and title
   labs(y = "Computer Screen Time (minutes)",
        x = "",
@@ -210,7 +208,8 @@ ggplot(data = my_data_clean,
   theme(legend.position = "none")
 
 ```
-**Figure 1. Weekdays Have Greater Computer Screen Time on Average**. Hollow blue points represent Weekday daily computer screen times from April 20, 2026 to May 27, 2026. Hollow orange points Weekend daily computer screen times from April 20, 2026 to May 27, 2026. The bottom line of the box represents the 25th percentile, the middle line represents the median, and the top line represents the 75th percentile. The lines extended out from the boxplot extend to the furthest point within 1.5 times the value of the IQR. The filled in point in the Weekdays group represents an outlier further than 1.5 times the IQR above the 75th percentile. Data originally from: Jared Umphress. 2026. Computer Screen Time Data. Data accessed 2026-05-28.
+**Figure 1. Weekdays Have Greater Computer Screen Time on Average**. Hollow blue points represent Weekday daily computer screen times from April 20, 2026 to May 27, 2026. Hollow orange points Weekend daily computer screen times from April 20, 2026 to May 27, 2026. The bottom line of the box represents the 25th percentile, the middle line represents the median, and the top line represents the 75th percentile. The lines extended out from the boxplot extend to the furthest point within 1.5 times the value of the IQR. The filled in point in the Weekdays group represents an outlier further than 1.5 times the IQR above the 75th percentile. Data last updated 2026-05-27.
+
 
 ```{r}
 
@@ -226,7 +225,7 @@ ggplot(data = my_data_clean,
   geom_point(color = "orchid4") +
   # renaming x axis, y axis, and title
   labs(x = "Non-Computer Activity Time (minutes)",
-       y = "Computer Screen Time (minutes",
+       y = "Computer Screen Time (minutes)",
        title = "Activity Time effect on Computer Screen Time is Unclear",
        subtitle = "05-27-2026") +
   # changing theme from the default
@@ -234,15 +233,8 @@ ggplot(data = my_data_clean,
   # removing legend
   theme(legend.position = "none")
 
-
- #theme(legend.position = "none",
- #       panel.grid.major = element_blank(),
- #        panel.grid.minor = element_blank(),
- #        panel.background = element_blank(),
- #        plot.background = element_blank()
-
 ```
-**Figure 3. Computer Screen Time in Relation to Non-Computer Activity Time.** The filled in purple points represent a given days Non-Computer Activity Time and Computer Screen Time. Data originally from: Jared Umphress. 2026. Computer Screen Time Data. Data accessed 2026-05-28.
+**Figure 3. Computer Screen Time in Relation to Non-Computer Activity Time.** The filled in purple points represent a given days Non-Computer Activity Time and Computer Screen Time. Data last updated 2026-05-28.
 
 b. Captions\newline
 Captions included above. 
@@ -251,7 +243,7 @@ Captions included above.
 
 a. Describe in words what an affective visualization could look like for your personal data.\newline
 
-Since I am comparing computer screen time between weekdays vs weekends, I want to create a dichotomous visual. The weekdays and weekend group will each have images that combine to form sort of a boxplot. I would like to frame more computer screen time as bad and less screen time as good. Since weekdays had higher average computer screen times I want to use negative meme photos. Since weekends had lower average computer screen times I want to use positive meme photos. 
+Since I am comparing computer screen time between weekdays vs weekends, I want to create a dichotomous visual. The weekdays and weekend group will each have images that combine to form sort of a boxplot. I would like to frame more computer screen time as bad and less screen time as good. Since weekdays had higher average computer screen times I want to use negative images of memes and myself. Since weekends had lower average computer screen times I want to use positive images of memes and myself. 
 
 b. Create a sketch (on paper) of your idea\newline
 ![Affective Visual Sketch](affective_visual_sketch.JPG){width=100% fig-align="center"}
@@ -260,7 +252,8 @@ c. Make a draft of your visualization\newline
 ![Affective Visual Canva Draft 1](canva_affective_visual_draft1.jpg){width=100% fig-align="center"}
 
 d. Write an artist statement\newline
-I am showing the differences in computer screen time between weekdays and weekends. The inspiration for the watercolor background was Jill Pelto's paintings. The inspiratoin for the imagery were popular memes and feeling provoking images that I have found online or have captured of my own life. I developed my piece on canva and added imagery that felt either negative or positive, letting my creativity roam freely throughout the process. 
+I am showing the differences in computer screen time between weekdays and weekends. I was inspired to have a watercolor background, which is more visually appealing than a blank background, from Jill Pelto's paintings. The inspiration for the imagery were popular memes and feeling provoking images that I have captured of my own life. I developed my piece on canva and added imagery that felt either negative or positive, letting my creativity roam freely throughout the process. 
+
 e. Prep your materials to share in class\newline
 
 [Affective Visual Presentation](https://docs.google.com/presentation/d/1Y7-z5dcnbAaKNBAqVxenq7AqtHwft9xEEiFj2JxDOcY/edit?usp=sharing)
@@ -268,34 +261,20 @@ e. Prep your materials to share in class\newline
 ## Problem 4. Statistical critique
 
 a. Revisit and summarize\newline
-
-----------
-I have selected one of the Wilcoxon's test.
-
-The response variables are soil salinity and water content. The predictor variable is one of the two Phase sites. 
-
-
-The Wilcoxon test addresses the authors main question about the difference of soil abiotic factors between the two Phase sites. 
-
-A significant result would indicate that there is a difference in soil conditions between the two phase sites and thus they can use the two sites to compare how soil salinity and soil moisture affect plant establishment success.\newline
--------
-
-What are the statistical tests the authors are using to address their main research question?
-
 The authors used a Wilcoxon test to determine whether there is a difference in soil salinity and water content between two phase sites. A significant result would indicate that there is a difference in soil conditions between the two phase sites and thus they can use the two sites to compare how soil salinity and soil moisture affect plant establishment success. Comparing the two sites helps address the authors main question of how successful plant establishment is after the soil topography has been moved based on different abiotic factors. 
 
 ![Salinity Graph](salinity_graph.png)
 b. Visual clarity\newline
 
-The x-axis is time and the y-axis is salinity for one of the figure and moisture for the other figures which makes sense. They show the medians, 25th percentile, 75th percentile, and outliers through boxplots. The wilcoxon test results is displayed above each month that had measurements for the two phase sites. Overall, the visual clarity is strong, with the main statistical results displayed in a clear manner. 
+The x-axis is time and the y-axis is salinity for one of the figure and moisture for the other figures which makes sense. They show the medians, 25th percentile, 75th percentile, and outliers through boxplots. The Wilcoxon test results is displayed above each month that had measurements for the two phase sites. Overall, the visual clarity is strong, with the main statistical results displayed in a clear manner. 
 
 c. Aesthetic clarity\newline
 
-Overall, the authors handle "visual clutter" pretty good as they have taken efforts to increase their data to ink ratio such as removing the figure background and gridlines. The authors do not include the underlying data through a jitterplot over the boxplot which I think was a good choice to reduce visual clutter as there are ten boxplots in eaxh figure which would have meant a lot of points crowding each smaller boxplot. However, I would say that the white x letters on each boxplot, which might represent the median value of the boxplot increase the visual clutter
+Overall, the authors handle "visual clutter" pretty good as they have taken efforts to increase their data to ink ratio such as removing the figure background and gridlines. The authors do not include the underlying data through a jitterplot over the boxplot which I think was a good choice since there are ten boxplots which would have meant a lot of points crowding each smaller boxplot. However, I would say that the white x letters on each boxplot, which might represent the median value of the boxplot increase the visual clutter
 
 d. Recommendations\newline
 
-One thing that I would remove is the x letters on the boxplot as the median is already denoted by the bolded black line in the boxplot. Even if the white x represents the connecting point for the line graph between dates it is not necessary and increases the visual clutter. The second thing I could change is making the text slighly bigger to increase reading accesibility. As it is, it is hard to read some of the numbers until you open the "figure viewer" and even when you do the font size is a little too small and could be increased. 
+One thing that I would remove is the x letters on the boxplot as the median is already denoted by the bolded black line in the boxplot. Even if the white x represents the connecting point for the line graph between dates it is not necessary and increases the visual clutter. The second thing I could change is making the text slighly bigger to increase reading accesibility. As it is, it is hard to read some of the numbers until you open the "figure viewer" on the webpage, and even when you do the font size is a little too small and could be increased. 
 
 
 
