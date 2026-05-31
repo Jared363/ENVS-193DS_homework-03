@@ -285,4 +285,9 @@ What are the statistical tests the authors are using to address their main resea
 The authors used a Wilcoxon test to determine whether there is a difference in soil salinity and water content between two phase sites. A significant result would indicate that there is a difference in soil conditions between the two phase sites and thus they can use the two sites to compare how soil salinity and soil moisture affect plant establishment success. Comparing the two sites helps address the authors main question of how successful plant establishment is after the soil topography has been moved based on different abiotic factors. 
 
 ![Salinity Graph](salinity_graph.png)
+b. Visual clarity\newline
+
+The x-axis is time and the y-axis is salinity for one of the figure and moisture for the other figures which makes sense. They show the medians, 25th percentile, 75th percentile, and outliers through boxplots. The wilcoxon test results is displayed above each month that had measurements for the two phase sites. Overall, the visual clarity is strong, with the main statistical results displayed in a clear manner. 
+
+c. Aesthetic clarity\newline
 
