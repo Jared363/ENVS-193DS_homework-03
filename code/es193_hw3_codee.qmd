@@ -291,3 +291,10 @@ The x-axis is time and the y-axis is salinity for one of the figure and moisture
 
 c. Aesthetic clarity\newline
 
+How well did the authors handle “visual clutter”? How would you describe the the data:ink ratio?
+
+The authors handle "visual clutter" very well as they have taken efforts to increase their data to ink ratio such as removing the figure background and gridlines. The authors do not include the underlying data through a jitterplot over the boxplot which I think was a good choice to reduce visual clutter as there are ten boxplots in eaxh figure which would have meant a lot of points crowding each smaller boxplot. 
+
+
+
+
