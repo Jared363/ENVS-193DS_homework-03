@@ -133,7 +133,7 @@ d. Results communication\newline
 To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson's correlation test. We found a moderate negative relationship between temperature and kelp frond elongation rate (Pearson's correlation, r = -0.6877489, t(30) = -5.189, p < 0.0001, $\alpha$ = 0.05).
 
 e. Test implications\newline
-I found that as temperature increases, the kelp elongation rate decreases. This is based on my Pearson's correlation test, where I found a moderate negative relationship between temperatures and kelp frond elongation rate (Pearson's correlation, r = -0.6877489, t(30) = -5.189, p < 0.0001, $\alpha$ = 0.05). Based on these results we can infer that kelp growth rates will be lowered during warmer weather which may occur more frequently due to climate change. 
+I found that as temperature increases, the kelp elongation rate decreases. Based on these results we can infer that kelp growth rates will be lowered during warmer weather which may occur more frequently due to climate change. A decrease in kelp growth rate would be detrimental for kelp forest ecosystems and all the animals that depend on them. To conserve kelp forest ecosystems, we should mitigate climate change, which is definitely a tall task, or plant out kelp subspecies that are more heat tolerant. 
 
 f. Double check your own work\newline
 
@@ -150,7 +150,7 @@ cor.test(
 
 ```
 
-Both the Pearson's correlation test and Spearman's correlation test would have led me to make the same decision. The Spearman's correlation test also found a moderate negative relationship between temperature and kelp frond elongation rates (Spearman's correlation, $\rho$ =  -0.6891684, S = 9216.1, p < 0.0001, $\alpha$ = 0.05)
+Both the Pearson's correlation test and Spearman's correlation test would have led me to make the same decision. Both tests found a moderate negative relationship between temperature and kelp frond elongation rate, and the Pearson's r was about equal to the Spearman's $\rho$ (Pearson's correlation, r = -0.6877489, t(30) = -5.189, p < 0.0001, $\alpha$ = 0.05; Spearman's correlation, $\rho$ =  -0.6891684, S = 9216.1, p < 0.0001, $\alpha$ = 0.05). 
 
 ## Problem 2. Personal data
 
