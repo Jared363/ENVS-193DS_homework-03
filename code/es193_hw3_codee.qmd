@@ -5,6 +5,7 @@ subtitle: "May 30, 2026"
 format: 
   pdf:
     colorlinks: true
+toc: true
 
 execute:
   warning: false
@@ -114,7 +115,7 @@ ggplot(
 
 
 ```
-I checked the assumption that there is a linear relationship between the two variables by looking at the scatterplot of temperature and kelp elongation rate and determined that there is a linear relationship between them. I checked the assumption that the two variables are normally distributed by looking at a qq plot for each of the variables. Since the points are generally around the qq line and are randomly scattered above and below, I determined that there is a normal distribution for both variables. 
+I checked the assumption that there is a linear relationship between the two variables by looking at the scatterplot of temperature and kelp elongation rate and determined that there is a linear relationship between them. I checked the assumption that the two variables are normally distributed by looking at a qq plot for each of the variables. Since the points are generally around the qq line and are randomly scattered above and below, I determined that there is a normal distribution for both variables.\newpage 
 
 
 ### Running Pearson's Correlation Test
@@ -244,7 +245,7 @@ a. Describe in words what an affective visualization could look like for your pe
 Since I am comparing computer screen time between weekdays vs weekends, I want to create a dichotomous visual. The weekdays and weekend group will each have images that combine to form sort of a boxplot. I would like to frame more computer screen time as bad and less screen time as good. Since weekdays had higher average computer screen times I want to use negative images of memes and myself. Since weekends had lower average computer screen times I want to use positive images of memes and myself. 
 
 b. Create a sketch (on paper) of your idea\newline
-![Affective Visual Sketch](affective_visual_sketch.JPG){width=100% fig-align="center"}
+![Affective Visual Sketch](affective_visual_sketch.JPG){width=100% fig-align="center"}\newpage
 
 c. Make a draft of your visualization\newline
 ![Affective Visual Canva Draft 1](canva_affective_visual_draft1.jpg){width=100% fig-align="center"}
